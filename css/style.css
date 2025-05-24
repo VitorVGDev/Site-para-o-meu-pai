@@ -26,7 +26,7 @@
 }
 
 .dark-mode {
-    --bg-color: #0b061f;
+    --bg-color: #000000;
     --text-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .7);
 }
@@ -322,7 +322,7 @@ span {
 }
 
 .about-img img {
-    width: 40vw;
+    width: 30vw;
 }
 
 .heading {
@@ -354,28 +354,30 @@ span {
 }
 
 .services .services-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Sempre 3 colunas por linha */
     gap: 2rem;
+    justify-content: center; /* Centraliza os itens */
+    align-items: stretch;
+    color: #2b2b2b;
 }
 
 .services-container .services-box {
-    flex: 1 1 30rem;
-    background: var(--bg-color);
-    padding: 3rem 2rem 4rem;
-    border-radius: 2rem;
-    box-shadow: 0 .1rem .5rem var(--shadow-color);
-    text-align: center;
-    border-top: .6rem solid var(--main-color);
-    border-bottom: .6rem solid var(--main-color);
-    transition: .5s ease;
+    height: 100%; /* Garante que todos os boxes tenham a mesma altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.504); /* Borda suave */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 2rem; /* Espaçamento interno */
+    background: var(--white-color); /* Fundo branco */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transição suave */
 }
 
 .services-container .services-box:hover {
-    box-shadow: 0 .1rem 2rem var(--shadow-color);
-    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
 }
 
 .services-box i {
